@@ -1,0 +1,10 @@
+# Modules
+- color: "fbca04"
+  description: "This issue or pull request is related to redis-cluster module."
+  name: ":floppy_disk: redis-cluster"
+- color: "fbca04"
+  description: "This issue or pull request is related to redis-user module."
+  name: ":floppy_disk: redis-user"
+- color: "fbca04"
+  description: "This issue or pull request is related to redis-user-group module."
+  name: ":floppy_disk: redis-user-group"

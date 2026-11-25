@@ -1,0 +1,15 @@
+# Modules
+":floppy_disk: redis-cluster":
+- changed-files:
+  - any-glob-to-any-file:
+    - modules/redis-cluster/**/*
+
+":floppy_disk: redis-user":
+- changed-files:
+  - any-glob-to-any-file:
+    - modules/redis-user/**/*
+
+":floppy_disk: redis-user-group":
+- changed-files:
+  - any-glob-to-any-file:
+    - modules/redis-user-group/**/*

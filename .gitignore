@@ -5,7 +5,7 @@
 .LSOverride
 
 # Icon must end with two \r
-Icon[[:cntrl:]][[:cntrl:]]
+Icon
 
 # Thumbnails
 ._*

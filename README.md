@@ -20,14 +20,7 @@ Terraform Modules from [this package](https://github.com/tedilabs/terraform-aws-
   - Redis and Valkey users and user groups
 
 
-## Migration from terraform-aws-db
-
-These modules were moved from [tedilabs/terraform-aws-db](https://github.com/tedilabs/terraform-aws-db), with the `elasticache-` prefix removed from module and example directory names. See the [migration guide](./MIGRATION.md) for source mappings and existing deployment considerations.
-
-
 ## Usage
-
-The registry examples below target the first `v0.1.0` release. Until that release is published to the Terraform Registry, use a Git source pinned to a commit from this repository, as described in the migration guide.
 
 ### ElastiCache Redis
 

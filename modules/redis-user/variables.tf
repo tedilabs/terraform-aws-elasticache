@@ -23,6 +23,18 @@ variable "name" {
   nullable    = false
 }
 
+variable "id" {
+  description = "(Optional) The ID of the ElastiCache user. It can have up to 40 characters, and must begin with a letter. It should not end with a hyphen or contain two consecutive hyphens. Valid characters: A-Z, a-z, 0-9, and - (hyphen). If not provided, defaults to `{engine}-{name}`, or to `name` when `authentication.mode` is `iam` because IAM-enabled users require the same user ID and username."
+  type        = string
+  default     = null
+  nullable    = true
+
+  validation {
+    condition     = var.id == null || var.authentication.mode != "iam" || var.id == var.name
+    error_message = "`id` must be the same as `name` when `authentication.mode` is `iam`."
+  }
+}
+
 # INFO: https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html#Access-string
 variable "access_string" {
   description = "(Optional) Access permissions string used for this user. Defaults to `off -@all`."

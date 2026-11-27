@@ -1,9 +1,18 @@
 locals {
+  # INFO: IAM-enabled users require the user ID and the username to be identical.
+  id = (var.id != null
+    ? var.id
+    : (var.authentication.mode == "iam"
+      ? var.name
+      : "${var.engine}-${var.name}"
+    )
+  )
+
   metadata = {
     package = "terraform-aws-elasticache"
     version = trimspace(file("${path.module}/../../VERSION"))
     module  = basename(path.module)
-    name    = var.name
+    name    = local.id
   }
   module_tags = var.module_tags_enabled ? {
     "module.terraform.io/package"   = local.metadata.package
@@ -25,7 +34,7 @@ resource "aws_elasticache_user" "this" {
   region = var.region
 
   engine    = var.engine
-  user_id   = var.name
+  user_id   = local.id
   user_name = var.name
 
   access_string = var.access_string
